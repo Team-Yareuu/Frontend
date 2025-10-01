@@ -10,95 +10,101 @@ const FeaturedRecipes = () => {
   const featuredRecipes = [
     {
       id: 1,
-      title: "Nasi Gudeg Komplit",
-      description: "Gudeg khas Yogyakarta dengan ayam kampung, telur, dan sambal krecek yang menggugah selera",
-      image: "https://images.pexels.com/photos/4518843/pexels-photo-4518843.jpeg?w=400&h=300&fit=crop",
-      region: "Yogyakarta",
-      cookingTime: "6 jam",
-      difficulty: "Sulit",
-      budget: "Rp 65.000",
-      servings: 6,
-      rating: 4.8,
-      reviews: 234,
-      tags: ["Tradisional", "Manis", "Khas Jogja"],
-      isPopular: true
+      title: "Nasi Goreng Telur Warkop",
+      description: "Nasi goreng simpel pakai telur dan daun bawang andalan anak kos saat tanggal tua",
+      image: "https://images.unsplash.com/photo-1604908554027-912f4c4bdcb4?w=400&h=300&fit=crop",
+      region: "Nusantara",
+      cookingTime: "15 menit",
+      difficulty: "Mudah",
+      budget: "Rp 12.000",
+      servings: 1,
+      rating: 4.7,
+      reviews: 120,
+      tags: ["Praktis", "Murah", "Telur"],
+      isPopular: true,
+      isBudgetFriendly: true
     },
     {
       id: 2,
-      title: "Rendang Daging Sapi",
-      description: "Rendang autentik Padang dengan bumbu rempah pilihan yang dimasak hingga empuk dan kering",
-      image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=300&fit=crop",
-      region: "Sumatera Barat",
-      cookingTime: "8 jam",
-      difficulty: "Menengah",
-      budget: "Rp 85.000",
-      servings: 8,
-      rating: 4.9,
-      reviews: 456,
-      tags: ["Pedas", "Protein", "Minang"],
-      isNew: true
+      title: "Ayam Goreng Kecap Hemat",
+      description: "Potongan ayam kecil dimarinasi sederhana lalu ditumis kecap manis gurih, nasi nambah",
+      image: "https://images.unsplash.com/photo-1599120011070-16a9a8f2a5d3?w=400&h=300&fit=crop",
+      region: "Jawa",
+      cookingTime: "25 menit",
+      difficulty: "Mudah",
+      budget: "Rp 18.000",
+      servings: 2,
+      rating: 4.6,
+      reviews: 86,
+      tags: ["Rumahan", "Protein", "Kecap"],
+      isNew: true,
+      isBudgetFriendly: true
     },
     {
       id: 3,
-      title: "Soto Ayam Lamongan",
-      description: "Soto ayam khas Lamongan dengan kuah bening yang segar dan topping lengkap",
-      image: "https://images.pixabay.com/photo/2019/11/20/08/31/soup-4639743_1280.jpg?w=400&h=300&fit=crop",
-      region: "Jawa Timur",
-      cookingTime: "2 jam",
+      title: "Tumis Kangkung Bawang Putih",
+      description: "Sayur tumis 3 bahan: kangkung, bawang putih, cabai segar dan super cepat",
+      image: "https://images.unsplash.com/photo-1625944529558-7a6a2b0ca78d?w=400&h=300&fit=crop",
+      region: "Nusantara",
+      cookingTime: "10 menit",
       difficulty: "Mudah",
-      budget: "Rp 35.000",
-      servings: 4,
-      rating: 4.7,
-      reviews: 189,
-      tags: ["Berkuah", "Segar", "Praktis"],
+      budget: "Rp 8.000",
+      servings: 2,
+      rating: 4.5,
+      reviews: 64,
+      tags: ["Sehat", "Vegetarian", "Tumis"],
+      isHealthy: true,
       isBudgetFriendly: true
     },
     {
       id: 4,
-      title: "Gado-Gado Jakarta",
-      description: "Salad Indonesia dengan sayuran segar, tahu, tempe, dan bumbu kacang yang kaya rasa",
-      image: "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?w=400&h=300&fit=crop",
-      region: "DKI Jakarta",
-      cookingTime: "45 menit",
+      title: "Sayur Sop Sederhana",
+      description: "Sop bening isi wortel, kentang, kol, dan sosis/bakso opsional hangat dan hemat",
+      image: "https://images.unsplash.com/photo-1617093727343-374698b1b08a?w=400&h=300&fit=crop",
+      region: "Nusantara",
+      cookingTime: "20 menit",
       difficulty: "Mudah",
-      budget: "Rp 25.000",
-      servings: 4,
+      budget: "Rp 14.000",
+      servings: 2,
       rating: 4.6,
-      reviews: 167,
-      tags: ["Sehat", "Vegetarian", "Segar"],
-      isHealthy: true
+      reviews: 75,
+      tags: ["Berkuah", "Segar", "Rumahan"],
+      isBudgetFriendly: true
     },
     {
       id: 5,
-      title: "Ayam Betutu Bali",
-      description: "Ayam utuh yang dibumbui dengan base genep dan dibakar hingga empuk dan harum",
-      image: "https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=400&h=300&fit=crop",
-      region: "Bali",
-      cookingTime: "5 jam",
-      difficulty: "Sulit",
-      budget: "Rp 75.000",
-      servings: 6,
-      rating: 4.8,
-      reviews: 203,
-      tags: ["Pedas", "Bakar", "Bali"],
-      isSpicy: true
+      title: "Tahu Tempe Cabai Garam",
+      description: "Kriuk asin pedas modal tahu tempe lauk murah meriah favorit anak kos",
+      image: "https://images.unsplash.com/photo-1580740097994-8e1f2f2bd2c8?w=400&h=300&fit=crop",
+      region: "Nusantara",
+      cookingTime: "15 menit",
+      difficulty: "Mudah",
+      budget: "Rp 10.000",
+      servings: 2,
+      rating: 4.7,
+      reviews: 132,
+      tags: ["Murah", "Kriuk", "Pedas"],
+      isSpicy: true,
+      isBudgetFriendly: true
     },
     {
       id: 6,
-      title: "Pempek Palembang",
-      description: "Pempek ikan tenggiri asli Palembang dengan kuah cuko yang asam pedas menggugah selera",
-      image: "https://images.pexels.com/photos/4518843/pexels-photo-4518843.jpeg?w=400&h=300&fit=crop",
-      region: "Sumatera Selatan",
-      cookingTime: "3 jam",
-      difficulty: "Menengah",
-      budget: "Rp 45.000",
-      servings: 8,
-      rating: 4.7,
-      reviews: 298,
-      tags: ["Ikan", "Kenyal", "Asam Pedas"],
-      isSignature: true
+      title: "Mie Goreng Telur + Sayur",
+      description: "Upgrade mie instan: tambah telur orak-arik dan sedikit sawi/kol biar lebih bergizi",
+      image: "https://images.unsplash.com/photo-1585238342028-4bbc1a39ec2a?w=400&h=300&fit=crop",
+      region: "Nusantara",
+      cookingTime: "12 menit",
+      difficulty: "Mudah",
+      budget: "Rp 9.000",
+      servings: 1,
+      rating: 4.4,
+      reviews: 58,
+      tags: ["Instan", "Praktis", "Murah"],
+      isSignature: true,
+      isBudgetFriendly: true
     }
   ];
+
 
   const handleRecipeClick = (recipe) => {
     navigate('/recipe-detail', { state: { recipeId: recipe?.id, recipe } });
@@ -127,13 +133,13 @@ const FeaturedRecipes = () => {
             <Icon name="ChefHat" size={20} />
             <span className="text-sm font-medium uppercase tracking-wide">Resep Pilihan</span>
           </div>
-          
+
           <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4">
             Resep Terpopuler Indonesia
           </h2>
-          
+
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Koleksi resep autentik yang telah dipercaya ribuan keluarga Indonesia. 
+            Koleksi resep autentik yang telah dipercaya ribuan keluarga Indonesia.
             Dari yang tradisional hingga modern, semua dengan panduan AI yang mudah diikuti.
           </p>
         </div>
@@ -142,7 +148,7 @@ const FeaturedRecipes = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {featuredRecipes?.map((recipe) => {
             const badge = getBadgeInfo(recipe);
-            
+
             return (
               <div
                 key={recipe?.id}
@@ -157,7 +163,7 @@ const FeaturedRecipes = () => {
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
-                  
+
                   {/* Badge */}
                   {badge && (
                     <div className="absolute top-3 left-3">

@@ -155,7 +155,6 @@ const AIRecipeSearchPage = () => {
         );
       }
 
-      // Sort results
       switch (sortBy) {
         case 'rating':
           filteredResults?.sort((a, b) => b?.rating - a?.rating);
@@ -177,7 +176,6 @@ const AIRecipeSearchPage = () => {
           );
           break;
         default:
-          // Keep original order for relevance
           break;
       }
 

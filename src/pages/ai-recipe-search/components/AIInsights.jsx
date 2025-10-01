@@ -1,111 +1,199 @@
 import React, { useState, useEffect } from 'react';
 import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
+import insightsDataset from '../../../data/aiInsightsDataset.json';
+
+const INSIGHT_TEMPLATES = Array.isArray(insightsDataset) ? insightsDataset : [];
+const DEFAULT_INSIGHT_TEMPLATE =
+  INSIGHT_TEMPLATES.find((item) => item?.id === 'vegetarian') || INSIGHT_TEMPLATES[0] || {};
 
 const AIInsights = ({ searchQuery, results, filters }) => {
   const [insights, setInsights] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(() => {
-    if (searchQuery && results?.length > 0) {
-      generateInsights();
-    }
-  }, [searchQuery, results, filters]);
-
-  const generateInsights = () => {
-    setIsLoading(true);
-    
-    // Simulate AI processing
-    setTimeout(() => {
-      const mockInsights = {
-        searchAnalysis: {
-          intent: getSearchIntent(searchQuery),
-          confidence: Math.floor(Math.random() * 20) + 80,
-          suggestions: generateSuggestions(searchQuery, filters)
-        },
-        nutritionalTrends: {
-          avgCalories: Math.floor(Math.random() * 200) + 300,
-          healthScore: Math.floor(Math.random() * 30) + 70,
-          commonIngredients: ['Bawang merah', 'Cabai', 'Santan', 'Kunyit', 'Jahe']
-        },
-        budgetAnalysis: {
-          avgCost: Math.floor(Math.random() * 50000) + 25000,
-          costRange: { min: 15000, max: 85000 },
-          budgetTips: [
-            "Gunakan ayam kampung untuk rasa lebih autentik dengan harga terjangkau",
-            "Beli bumbu dalam jumlah besar untuk menghemat biaya per porsi",
-            "Manfaatkan sayuran musiman untuk mengurangi biaya bahan"
-          ]
-        },
-        culturalContext: {
-          region: getCulturalRegion(searchQuery),
-          tradition: "Resep ini memiliki akar budaya yang kuat dalam tradisi kuliner Indonesia",
-          modernAdaptation: "Versi modern menggunakan teknik memasak yang lebih efisien"
-        },
-        personalizedRecommendations: [
-          "Berdasarkan pencarian Anda, coba juga: Gulai Ayam Padang",
-          "Resep serupa yang mungkin Anda suka: Opor Ayam Betawi",
-          "Variasi regional: Rendang Daging Minang"
-        ]
-      };
-      
-      setInsights(mockInsights);
-      setIsLoading(false);
-    }, 1500);
-  };
-
   const getSearchIntent = (query) => {
     const intents = {
-      'rendang': 'Mencari resep tradisional Sumatera',
-      'vegetarian': 'Mencari alternatif protein nabati',
-      'cepat': 'Mencari solusi memasak praktis',
-      'sehat': 'Fokus pada nutrisi dan kesehatan',
-      'budget': 'Mengutamakan efisiensi biaya',
-      'default': 'Eksplorasi kuliner Indonesia'
+      rendang: 'Mencari resep tradisional Sumatera',
+      vegetarian: 'Mencari alternatif protein nabati',
+      cepat: 'Mencari solusi memasak praktis',
+      sehat: 'Fokus pada nutrisi dan kesehatan',
+      budget: 'Mengutamakan efisiensi biaya',
+      default: 'Eksplorasi kuliner Indonesia'
     };
-    
+
     for (const [key, intent] of Object.entries(intents)) {
       if (query?.toLowerCase()?.includes(key)) {
         return intent;
       }
     }
+
     return intents?.default;
   };
 
   const getCulturalRegion = (query) => {
     const regions = {
-      'rendang': 'Sumatera Barat',
-      'gudeg': 'Yogyakarta',
-      'soto': 'Jawa Tengah',
+      rendang: 'Sumatera Barat',
+      gudeg: 'Yogyakarta',
+      soto: 'Jawa Tengah',
       'gado-gado': 'Betawi',
-      'default': 'Nusantara'
+      default: 'Nusantara'
     };
-    
+
     for (const [key, region] of Object.entries(regions)) {
       if (query?.toLowerCase()?.includes(key)) {
         return region;
       }
     }
+
     return regions?.default;
   };
 
-  const generateSuggestions = (query, filters) => {
-    const suggestions = [
-      "Coba tambahkan filter \'tradisional\' untuk resep lebih autentik",
-      "Pertimbangkan variasi regional dari resep yang sama",
-      "Eksplorasi bahan pengganti untuk diet khusus",
-      "Lihat resep dengan tingkat kesulitan yang berbeda"
-    ];
-    
-    return suggestions?.slice(0, 2);
+  const findInsightTemplate = (query) => {
+    if (!query) {
+      return DEFAULT_INSIGHT_TEMPLATE;
+    }
+
+    const normalizedQuery = query.toLowerCase();
+
+    return (
+      INSIGHT_TEMPLATES?.find((template) =>
+        template?.matchTerms?.some((term) => normalizedQuery.includes(term?.toLowerCase()))
+      ) || DEFAULT_INSIGHT_TEMPLATE
+    );
   };
+
+  const computeBudgetStats = (recipes = []) => {
+    const costs = recipes
+      ?.map((recipe) => Number(recipe?.estimatedCost))
+      ?.filter((value) => Number.isFinite(value));
+
+    if (!costs?.length) {
+      return null;
+    }
+
+    const total = costs?.reduce((acc, value) => acc + value, 0);
+
+    return {
+      avgCost: Math.round(total / costs.length),
+      costRange: {
+        min: Math.min(...costs),
+        max: Math.max(...costs)
+      }
+    };
+  };
+
+  const computeConfidence = (baseConfidence = DEFAULT_INSIGHT_TEMPLATE?.searchAnalysis?.confidence || 85, recipes = []) => {
+    if (!recipes?.length) {
+      return Math.max(50, baseConfidence - 10);
+    }
+
+    const culturalDiversity = new Set(
+      recipes?.map((recipe) => recipe?.cultural)?.filter(Boolean)
+    )?.size;
+
+    const diversityBonus = Math.min(6, culturalDiversity * 2);
+    const volumeBonus = Math.min(6, recipes.length);
+
+    return Math.min(100, baseConfidence + diversityBonus + volumeBonus);
+  };
+
+  const countAppliedFilters = (appliedFilters) => {
+    if (!appliedFilters) {
+      return 0;
+    }
+
+    return Object.values(appliedFilters)?.reduce((acc, value) => {
+      if (!value) {
+        return acc;
+      }
+
+      if (Array.isArray(value)) {
+        return acc + value.length;
+      }
+
+      if (typeof value === 'object') {
+        return (
+          acc +
+          Object.values(value)?.reduce((count, item) => (item ? count + 1 : count), 0)
+        );
+      }
+
+      return acc + 1;
+    }, 0);
+  };
+
+  const buildSuggestions = (templateSuggestions = []) => {
+    const suggestions = [...templateSuggestions];
+    const filterCount = countAppliedFilters(filters);
+
+    if (filterCount > 0) {
+      suggestions.push(
+        `Filter aktif (${filterCount}) bisa disesuaikan untuk hasil yang lebih presisi`
+      );
+    } else if (results?.length > 3) {
+      suggestions.push('Gunakan filter tingkat kesulitan untuk mempersempit rekomendasi');
+    }
+
+    return suggestions?.slice(0, 3);
+  };
+
+  const generateInsights = () => {
+    setIsLoading(true);
+
+    const timeoutId = setTimeout(() => {
+      const template = findInsightTemplate(searchQuery);
+      const budgetStats = computeBudgetStats(results);
+      const resolvedInsights = {
+        searchAnalysis: {
+          intent: template?.searchAnalysis?.intent || getSearchIntent(searchQuery),
+          confidence: computeConfidence(template?.searchAnalysis?.confidence, results),
+          suggestions: buildSuggestions(template?.searchAnalysis?.suggestions)
+        },
+        nutritionalTrends: {
+          avgCalories: template?.nutritionalTrends?.avgCalories || 0,
+          healthScore: template?.nutritionalTrends?.healthScore || 0,
+          commonIngredients: template?.nutritionalTrends?.commonIngredients || []
+        },
+        budgetAnalysis: {
+          avgCost: budgetStats?.avgCost ?? template?.budgetAnalysis?.avgCost ?? 0,
+          costRange: {
+            min: budgetStats?.costRange?.min ?? template?.budgetAnalysis?.costRange?.min ?? 0,
+            max: budgetStats?.costRange?.max ?? template?.budgetAnalysis?.costRange?.max ?? 0
+          },
+          budgetTips: template?.budgetAnalysis?.budgetTips || []
+        },
+        culturalContext: {
+          region: template?.culturalContext?.region || getCulturalRegion(searchQuery),
+          tradition: template?.culturalContext?.tradition || '',
+          modernAdaptation: template?.culturalContext?.modernAdaptation || ''
+        },
+        personalizedRecommendations: template?.personalizedRecommendations || []
+      };
+
+      setInsights(resolvedInsights);
+      setIsLoading(false);
+    }, 600);
+
+    return () => clearTimeout(timeoutId);
+  };
+
+  useEffect(() => {
+    if (searchQuery && results?.length > 0) {
+      return generateInsights();
+    }
+
+    setInsights(null);
+    setIsLoading(false);
+
+    return undefined;
+  }, [searchQuery, results, filters]);
 
   const formatCurrency = (amount) => {
     return new Intl.NumberFormat('id-ID', {
       style: 'currency',
       currency: 'IDR',
       minimumFractionDigits: 0
-    })?.format(amount);
+    })?.format(amount ?? 0);
   };
 
   if (!searchQuery || !results?.length) {
@@ -119,7 +207,7 @@ const AIInsights = ({ searchQuery, results, filters }) => {
           <Icon name="Brain" size={24} className="text-primary" />
           <h3 className="text-lg font-semibold text-foreground">AI Insights</h3>
         </div>
-        
+
         <div className="flex items-center space-x-3">
           <Icon name="Loader2" size={20} className="animate-spin text-primary" />
           <span className="text-muted-foreground">Menganalisis hasil pencarian...</span>
@@ -153,7 +241,7 @@ const AIInsights = ({ searchQuery, results, filters }) => {
               <h4 className="font-medium text-foreground">Analisis Pencarian</h4>
             </div>
             <p className="text-sm text-muted-foreground mb-3">{insights?.searchAnalysis?.intent}</p>
-            
+
             <div className="space-y-2">
               <h5 className="text-xs font-medium text-foreground">Saran AI:</h5>
               {insights?.searchAnalysis?.suggestions?.map((suggestion, index) => (
@@ -188,7 +276,7 @@ const AIInsights = ({ searchQuery, results, filters }) => {
               <Icon name="DollarSign" size={16} className="text-success" />
               <h4 className="font-medium text-foreground">Analisis Budget</h4>
             </div>
-            
+
             <div className="grid grid-cols-2 gap-4 mb-3">
               <div className="text-center">
                 <div className="text-lg font-semibold text-success">
@@ -221,7 +309,7 @@ const AIInsights = ({ searchQuery, results, filters }) => {
               <Icon name="Activity" size={16} className="text-pandan" />
               <h4 className="font-medium text-foreground">Tren Nutrisi</h4>
             </div>
-            
+
             <div className="grid grid-cols-2 gap-4 mb-3">
               <div className="text-center">
                 <div className="text-lg font-semibold text-pandan">
@@ -259,7 +347,7 @@ const AIInsights = ({ searchQuery, results, filters }) => {
           <Icon name="Sparkles" size={16} className="text-accent" />
           <h4 className="font-medium text-foreground">Rekomendasi Personal</h4>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
           {insights?.personalizedRecommendations?.map((recommendation, index) => (
             <div

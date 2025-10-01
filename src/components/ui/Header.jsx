@@ -16,10 +16,6 @@ const Header = ({ className = '' }) => {
     { path: '/personal-kitchen-dashboard', label: 'Dapur Saya', icon: 'ChefHat' }
   ];
 
-  const secondaryNavItems = [
-    { path: '/recipe-detail', label: 'Detail Resep', icon: 'FileText' }
-  ];
-
   const isActivePath = (path) => location?.pathname === path;
 
   const handleNavigation = (path) => {
@@ -74,7 +70,7 @@ const Header = ({ className = '' }) => {
               
               <div className="absolute right-0 top-full mt-2 w-48 bg-popover border border-border rounded-lg shadow-cultural-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-cultural">
                 <div className="py-2">
-                  {[...primaryNavItems?.slice(4), ...secondaryNavItems]?.map((item) => (
+                  {primaryNavItems?.slice(4)?.map((item) => (
                     <button
                       key={item?.path}
                       onClick={() => handleNavigation(item?.path)}
@@ -141,25 +137,6 @@ const Header = ({ className = '' }) => {
                 </button>
               ))}
             </div>
-
-            {/* Secondary Navigation */}
-            <div className="pt-4 border-t border-border space-y-1">
-              {secondaryNavItems?.map((item) => (
-                <button
-                  key={item?.path}
-                  onClick={() => handleNavigation(item?.path)}
-                  className={`flex items-center space-x-3 w-full px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 ease-cultural touch-target ${
-                    isActivePath(item?.path)
-                      ? 'bg-primary text-primary-foreground shadow-cultural'
-                      : 'text-foreground hover:bg-muted'
-                  }`}
-                >
-                  <Icon name={item?.icon} size={18} />
-                  <span>{item?.label}</span>
-                </button>
-              ))}
-            </div>
-
             {/* Mobile User Actions */}
             <div className="pt-4 border-t border-border space-y-2">
               <Button variant="outline" fullWidth iconName="User" iconPosition="left">

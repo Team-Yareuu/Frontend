@@ -38,18 +38,18 @@ const Homepage = () => {
       <main className="relative">
         {/* Hero Section */}
         <HeroSection />
+        {/* AI Features Showcase */}
+        <AIFeaturesShowcase />
 
         {/* Featured Recipes */}
         <FeaturedRecipes />
 
+        {/* Budget Friendly Section */}
+        <BudgetFriendlySection />
+        
         {/* Cultural Stories */}
         <CulturalStories />
 
-        {/* Budget Friendly Section */}
-        <BudgetFriendlySection />
-
-        {/* AI Features Showcase */}
-        <AIFeaturesShowcase />
 
         {/* Testimonials */}
         <TestimonialsSection />

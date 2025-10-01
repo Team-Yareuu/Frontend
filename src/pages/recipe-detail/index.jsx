@@ -23,12 +23,11 @@ const RecipeDetail = () => {
   const [showAIAssistant, setShowAIAssistant] = useState(false);
   const [activeTab, setActiveTab] = useState('ingredients');
 
-  // Mock recipe data
   const mockRecipe = {
     id: recipeId,
     name: "Rendang Daging Sapi Padang",
     shortDescription: "Rendang daging sapi autentik dengan bumbu rempah tradisional Minangkabau yang kaya cita rasa",
-    image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=800&h=600&fit=crop",
+    image: "https://api.meatguy.id/admin/image/blogs/6cfa140f-ccbc-4580-a4a0-9261b7af9aa9",
     region: "Sumatera Barat",
     difficulty: "Sedang",
     cookingTime: "3 jam",
@@ -105,27 +104,31 @@ const RecipeDetail = () => {
             { price: 15000 }
           ]
         },
+      ],
+      offlineStores: [
         {
-          name: "blibli",
-          total: 87000,
-          ingredients: [
-            { price: 46000 },
-            { price: 8500 },
-            { price: 12500 },
-            { price: 5000 },
-            { price: 15000 }
-          ]
+          name: "Pasar Raya Padang",
+          address: "Jl. Pasar Raya No. 1, Padang",
+          openingHours: "05.00 - 18.00",
+          estimatedDistance: 2.5,
+          location: { lat: -0.9501, lng: 100.3531 },
+          recommendedItems: ["Daging sapi segar", "Rempah tradisional"]
         },
         {
-          name: "bukalapak",
-          total: 84000,
-          ingredients: [
-            { price: 44000 },
-            { price: 8000 },
-            { price: 12000 },
-            { price: 5000 },
-            { price: 15000 }
-          ]
+          name: "Pasar Lubuk Buaya",
+          address: "Jl. Adinegoro, Lubuk Buaya",
+          openingHours: "06.00 - 17.00",
+          estimatedDistance: 6.1,
+          location: { lat: -0.8932, lng: 100.3501 },
+          recommendedItems: ["Cabai merah", "Kelapa parut"]
+        },
+        {
+          name: "Toko Bahan Masak Andalas",
+          address: "Jl. Andalas No. 25, Padang Timur",
+          openingHours: "08.00 - 21.00",
+          estimatedDistance: 3.2,
+          location: { lat: -0.9344, lng: 100.3675 },
+          recommendedItems: ["Santan segar", "Bumbu instan"]
         }
       ],
       ingredients: [
@@ -501,7 +504,7 @@ const RecipeDetail = () => {
   ];
 
   useEffect(() => {
-    // Simulate loading recipe data
+   
     setRecipe(mockRecipe);
   }, [recipeId]);
 
