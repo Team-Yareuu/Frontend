@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 import Header from '../../components/ui/Header';
 import RecipeHeader from './components/RecipeHeader';
 import CulturalStory from './components/CulturalStory';
@@ -18,9 +18,17 @@ import mockReviewsData from '../../data/mockReviews.json';
 import mockRelatedRecipesData from '../../data/mockRelatedRecipes.json';
 
 const RecipeDetail = () => {
-  const [searchParams] = useSearchParams();
-  const recipeId = searchParams?.get('id') || '1';
-  
+  const { id: routeRecipeId } = useParams();
+  const location = useLocation();
+  const stateRecipe = location?.state?.recipe;
+  const stateRecipeId = location?.state?.recipeId;
+  const resolvedRecipeId = (() => {
+    if (routeRecipeId) return routeRecipeId;
+    if (stateRecipeId !== undefined && stateRecipeId !== null) return String(stateRecipeId);
+    if (stateRecipe?.id !== undefined && stateRecipe?.id !== null) return String(stateRecipe?.id);
+    return '1';
+  })();
+
   const [recipe, setRecipe] = useState(null);
   const [servings, setServings] = useState(4);
   const [isSaved, setIsSaved] = useState(false);
@@ -28,8 +36,23 @@ const RecipeDetail = () => {
   const [activeTab, setActiveTab] = useState('ingredients');
 
   useEffect(() => {
-    setRecipe({ ...mockRecipeData, id: recipeId });
-  }, [recipeId]);
+    if (stateRecipe) {
+      setRecipe({ ...stateRecipe, id: resolvedRecipeId });
+      setServings(stateRecipe?.servings ?? 4);
+      return;
+    }
+    const foundRecipe = mockRecipeData.find(
+      (r) => String(r.id) === String(resolvedRecipeId)
+    );
+    if (foundRecipe) {
+      setRecipe(foundRecipe);
+      setServings(foundRecipe?.servings ?? 4);
+    } else {
+      // fallback kalau id ga ketemu → ambil resep pertama
+      setRecipe(mockRecipeData[0]);
+      setServings(mockRecipeData[0]?.servings ?? 4);
+    }
+  }, [stateRecipe, resolvedRecipeId]);
 
   const handleSave = () => {
     setIsSaved(!isSaved);
@@ -44,7 +67,6 @@ const RecipeDetail = () => {
       });
     } else {
       navigator.clipboard?.writeText(window.location?.href);
-      // Could show toast notification here
     }
   };
 
@@ -67,7 +89,6 @@ const RecipeDetail = () => {
   };
 
   const handleAddReview = () => {
-    // Handle adding new review
     console.log('Add new review');
   };
 
@@ -116,11 +137,10 @@ const RecipeDetail = () => {
                     <button
                       key={tab?.id}
                       onClick={() => setActiveTab(tab?.id)}
-                      className={`flex-1 flex items-center justify-center space-x-2 px-4 py-3 text-sm font-medium transition-colors ${
-                        activeTab === tab?.id
-                          ? 'bg-primary text-primary-foreground'
-                          : 'text-muted-foreground hover:text-foreground hover:bg-muted'
-                      }`}
+                      className={`flex-1 flex items-center justify-center space-x-2 px-4 py-3 text-sm font-medium transition-colors ${activeTab === tab?.id
+                        ? 'bg-primary text-primary-foreground'
+                        : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                        }`}
                     >
                       <Icon name={tab?.icon} size={16} />
                       <span className="hidden sm:inline">{tab?.label}</span>
@@ -137,14 +157,14 @@ const RecipeDetail = () => {
                       onSubstitute={handleSubstitute}
                     />
                   )}
-                  
+
                   {activeTab === 'steps' && (
                     <CookingSteps
                       steps={recipe?.cookingSteps}
                       onAIHelp={handleAIHelp}
                     />
                   )}
-                  
+
                   {activeTab === 'nutrition' && (
                     <NutritionInfo
                       nutrition={recipe?.nutrition}

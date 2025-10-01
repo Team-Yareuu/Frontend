@@ -30,7 +30,7 @@ const SearchResults = ({ results, isLoading, searchQuery, sortBy, onSortChange }
   };
 
   const handleRecipeClick = (recipe) => {
-    navigate('/recipe-detail', { state: { recipe } });
+    navigate(`/recipe-detail/${recipe?.id || recipe?.slug || '1'}`, { state: { recipe } });
   };
 
   const getDifficultyColor = (difficulty) => {

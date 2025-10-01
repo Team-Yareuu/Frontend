@@ -1,383 +1,1256 @@
-{
-  "id": "1",
-  "name": "Rendang Daging Sapi Padang",
-  "shortDescription": "Rendang daging sapi autentik dengan bumbu rempah tradisional Minangkabau yang kaya cita rasa",
-  "image": "https://api.meatguy.id/admin/image/blogs/6cfa140f-ccbc-4580-a4a0-9261b7af9aa9",
-  "region": "Sumatera Barat",
-  "difficulty": "Sedang",
-  "cookingTime": "3 jam",
-  "servings": 4,
-  "rating": 4.8,
-  "reviewCount": 234,
-  "estimatedCost": 85000,
-  "isTraditional": true,
-  "isNew": false,
-  "culturalStory": {
-    "shortStory": "Rendang adalah masakan tradisional Minangkabau yang telah diakui UNESCO sebagai warisan budaya dunia. Hidangan ini melambangkan filosofi kehidupan masyarakat Minang.",
-    "fullStory": "Rendang adalah masakan tradisional Minangkabau yang telah diakui UNESCO sebagai warisan budaya dunia. Hidangan ini melambangkan filosofi kehidupan masyarakat Minang yang penuh makna.\n\nDalam tradisi Minangkabau, rendang bukan sekadar makanan, tetapi simbol ketahanan dan kesabaran. Proses memasak yang memakan waktu berjam-jam mencerminkan nilai kesabaran dalam menghadapi kehidupan.\n\nSetiap bumbu dalam rendang memiliki makna filosofis. Daging melambangkan niniak mamak (pemimpin adat), santan adalah bundo kanduang (ibu), cabai adalah alim ulama, dan rempah-rempah lainnya mewakili cerdik pandai dan masyarakat biasa.\n\nRendang biasanya disajikan dalam acara-acara penting seperti pernikahan, batagak penghulu, dan hari raya. Kemampuan membuat rendang yang lezat menjadi kebanggaan tersendiri bagi perempuan Minang.",
-    "culturalElements": [
-      {
-        "title": "Filosofi Kesabaran",
-        "description": "Proses memasak yang lama mengajarkan nilai kesabaran dan ketekunan"
-      },
-      {
-        "title": "Simbol Persatuan",
-        "description": "Setiap bumbu mewakili elemen masyarakat yang bersatu"
-      },
-      {
-        "title": "Warisan Leluhur",
-        "description": "Resep turun temurun dari generasi ke generasi"
-      },
-      {
-        "title": "Identitas Budaya",
-        "description": "Menjadi penanda identitas masyarakat Minangkabau"
-      }
-    ],
-    "regionalVariations": [
-      {
-        "region": "Padang",
-        "province": "Sumatera Barat",
-        "difference": "Menggunakan santan kental dan dimasak hingga kering sempurna"
-      },
-      {
-        "region": "Payakumbuh",
-        "province": "Sumatera Barat",
-        "difference": "Ditambahkan daun kunyit untuk aroma yang lebih harum"
-      },
-      {
-        "region": "Bukittinggi",
-        "province": "Sumatera Barat",
-        "difference": "Menggunakan cabai yang lebih banyak untuk rasa pedas yang kuat"
-      }
-    ]
-  },
-  "budgetData": {
-    "total": 85000,
-    "perServing": 21250,
-    "savings": 15000,
-    "restaurantSavings": 65,
-    "marketplaces": [
-      {
-        "name": "tokopedia",
-        "total": 85000,
-        "ingredients": [
-          {
-            "price": 45000
-          },
-          {
-            "price": 8000
-          },
-          {
-            "price": 12000
-          },
-          {
-            "price": 5000
-          },
-          {
-            "price": 15000
-          }
-        ]
-      },
-      {
-        "name": "shopee",
-        "total": 82000,
-        "ingredients": [
-          {
-            "price": 43000
-          },
-          {
-            "price": 7500
-          },
-          {
-            "price": 11500
-          },
-          {
-            "price": 5000
-          },
-          {
-            "price": 15000
-          }
-        ]
-      }
-    ],
-    "offlineStores": [
-      {
-        "name": "Pasar Raya Padang",
-        "address": "Jl. Pasar Raya No. 1, Padang",
-        "openingHours": "05.00 - 18.00",
-        "estimatedDistance": 2.5,
-        "location": {
-          "lat": -0.9501,
-          "lng": 100.3531
-        },
-        "recommendedItems": [
-          "Daging sapi segar",
-          "Rempah tradisional"
-        ]
-      },
-      {
-        "name": "Pasar Lubuk Buaya",
-        "address": "Jl. Adinegoro, Lubuk Buaya",
-        "openingHours": "06.00 - 17.00",
-        "estimatedDistance": 6.1,
-        "location": {
-          "lat": -0.8932,
-          "lng": 100.3501
-        },
-        "recommendedItems": [
-          "Cabai merah",
-          "Kelapa parut"
-        ]
-      }
-    ]
-  },
-  "ingredients": [
-    {
-      "category": "Bahan Utama",
-      "items": [
+[
+  {
+    "id": "1",
+    "name": "Rendang Daging Sapi Padang",
+    "shortDescription": "Rendang daging sapi autentik dengan bumbu rempah tradisional Minangkabau yang kaya cita rasa",
+    "image": "https://api.meatguy.id/admin/image/blogs/6cfa140f-ccbc-4580-a4a0-9261b7af9aa9",
+    "region": "Sumatera Barat",
+    "difficulty": "Sedang",
+    "cookingTime": "3 jam",
+    "servings": 4,
+    "rating": 4.8,
+    "reviewCount": 234,
+    "estimatedCost": 85000,
+    "isTraditional": true,
+    "isNew": false,
+    "culturalStory": {
+      "shortStory": "Rendang adalah masakan tradisional Minangkabau yang telah diakui UNESCO sebagai warisan budaya dunia. Hidangan ini melambangkan filosofi kehidupan masyarakat Minang.",
+      "fullStory": "Rendang adalah masakan tradisional Minangkabau yang telah diakui UNESCO sebagai warisan budaya dunia. Hidangan ini melambangkan filosofi kehidupan masyarakat Minang yang penuh makna.\n\nDalam tradisi Minangkabau, rendang bukan sekadar makanan, tetapi simbol ketahanan dan kesabaran. Proses memasak yang memakan waktu berjam-jam mencerminkan nilai kesabaran dalam menghadapi kehidupan.\n\nSetiap bumbu dalam rendang memiliki makna filosofis. Daging melambangkan niniak mamak (pemimpin adat), santan adalah bundo kanduang (ibu), cabai adalah alim ulama, dan rempah-rempah lainnya mewakili cerdik pandai dan masyarakat biasa.\n\nRendang biasanya disajikan dalam acara-acara penting seperti pernikahan, batagak penghulu, dan hari raya. Kemampuan membuat rendang yang lezat menjadi kebanggaan tersendiri bagi perempuan Minang.",
+      "culturalElements": [
         {
-          "name": "Daging sapi paha atas",
-          "amount": 1000,
-          "unit": "gram",
-          "notes": "Potong dadu besar",
-          "substitutes": [
-            "Daging sapi sengkel",
-            "Daging sapi sandung lamur"
-          ]
+          "title": "Filosofi Kesabaran",
+          "description": "Proses memasak yang lama mengajarkan nilai kesabaran dan ketekunan"
         },
         {
-          "name": "Santan kental",
-          "amount": 1000,
-          "unit": "ml",
-          "notes": "Dari 2 butir kelapa parut segar",
-          "substitutes": [
-            "Santan instan premium"
-          ]
+          "title": "Simbol Persatuan",
+          "description": "Setiap bumbu mewakili elemen masyarakat yang bersatu"
         },
         {
-          "name": "Daun kunyit",
-          "amount": 1,
-          "unit": "lembar",
-          "notes": "Simpulkan"
+          "title": "Warisan Leluhur",
+          "description": "Resep turun temurun dari generasi ke generasi"
         },
         {
-          "name": "Daun salam",
-          "amount": 3,
-          "unit": "lembar"
+          "title": "Identitas Budaya",
+          "description": "Menjadi penanda identitas masyarakat Minangkabau"
+        }
+      ],
+      "regionalVariations": [
+        {
+          "region": "Padang",
+          "province": "Sumatera Barat",
+          "difference": "Menggunakan santan kental dan dimasak hingga kering sempurna"
         },
         {
-          "name": "Serai",
-          "amount": 2,
-          "unit": "batang",
-          "notes": "Memarkan"
+          "region": "Payakumbuh",
+          "province": "Sumatera Barat",
+          "difference": "Ditambahkan daun kunyit untuk aroma yang lebih harum"
         },
         {
-          "name": "Asam kandis",
-          "amount": 2,
-          "unit": "buah"
+          "region": "Bukittinggi",
+          "province": "Sumatera Barat",
+          "difference": "Menggunakan cabai yang lebih banyak untuk rasa pedas yang kuat"
         }
       ]
     },
-    {
-      "category": "Bumbu Halus",
-      "items": [
+    "budgetData": {
+      "total": 85000,
+      "perServing": 21250,
+      "savings": 15000,
+      "restaurantSavings": 65,
+      "marketplaces": [
         {
-          "name": "Cabai merah keriting",
-          "amount": 15,
-          "unit": "buah",
-          "notes": "Sesuai selera"
+          "name": "tokopedia",
+          "total": 85000,
+          "ingredients": [
+            {
+              "price": 45000
+            },
+            {
+              "price": 8000
+            },
+            {
+              "price": 12000
+            },
+            {
+              "price": 5000
+            },
+            {
+              "price": 15000
+            }
+          ]
+        },
+        {
+          "name": "shopee",
+          "total": 82000,
+          "ingredients": [
+            {
+              "price": 43000
+            },
+            {
+              "price": 7500
+            },
+            {
+              "price": 11500
+            },
+            {
+              "price": 5000
+            },
+            {
+              "price": 15000
+            }
+          ]
+        }
+      ],
+      "offlineStores": [
+        {
+          "name": "Pasar Raya Padang",
+          "address": "Jl. Pasar Raya No. 1, Padang",
+          "openingHours": "05.00 - 18.00",
+          "estimatedDistance": 2.5,
+          "location": {
+            "lat": -0.9501,
+            "lng": 100.3531
+          },
+          "recommendedItems": [
+            "Daging sapi segar",
+            "Rempah tradisional"
+          ]
+        },
+        {
+          "name": "Pasar Lubuk Buaya",
+          "address": "Jl. Adinegoro, Lubuk Buaya",
+          "openingHours": "06.00 - 17.00",
+          "estimatedDistance": 6.1,
+          "location": {
+            "lat": -0.8932,
+            "lng": 100.3501
+          },
+          "recommendedItems": [
+            "Cabai merah",
+            "Kelapa parut"
+          ]
+        }
+      ]
+    },
+    "ingredients": [
+      {
+        "name": "Daging sapi paha atas",
+        "quantity": "1000 gram",
+        "category": "protein",
+        "notes": "Potong dadu besar",
+        "substitutes": [
+          "Daging sapi sengkel",
+          "Daging sapi sandung lamur"
+        ],
+        "optional": false
+      },
+      {
+        "name": "Santan kental",
+        "quantity": "1000 ml",
+        "category": "dairy",
+        "notes": "Dari 2 butir kelapa parut segar",
+        "substitutes": [
+          "Santan instan premium"
+        ],
+        "optional": false
+      },
+      {
+        "name": "Daun kunyit",
+        "quantity": "1 lembar",
+        "category": "herb",
+        "notes": "Simpulkan",
+        "optional": false
+      },
+      {
+        "name": "Daun salam",
+        "quantity": "3 lembar",
+        "category": "herb",
+        "optional": false
+      },
+      {
+        "name": "Serai",
+        "quantity": "2 batang",
+        "category": "herb",
+        "notes": "Memarkan",
+        "optional": false
+      },
+      {
+        "name": "Asam kandis",
+        "quantity": "2 buah",
+        "category": "seasoning",
+        "optional": false
+      },
+      {
+        "name": "Cabai merah keriting",
+        "quantity": "15 buah",
+        "category": "spice",
+        "notes": "Sesuai selera",
+        "optional": false
+      },
+      {
+        "name": "Bawang merah",
+        "quantity": "10 siung",
+        "category": "spice",
+        "optional": false
+      },
+      {
+        "name": "Bawang putih",
+        "quantity": "6 siung",
+        "category": "spice",
+        "optional": false
+      },
+      {
+        "name": "Lengkuas",
+        "quantity": "50 gram",
+        "category": "spice",
+        "optional": false
+      },
+      {
+        "name": "Jahe",
+        "quantity": "30 gram",
+        "category": "spice",
+        "optional": false
+      },
+      {
+        "name": "Kunyit",
+        "quantity": "20 gram",
+        "category": "spice",
+        "optional": false
+      },
+      {
+        "name": "Kemiri",
+        "quantity": "6 butir",
+        "category": "spice",
+        "notes": "Sangrai terlebih dahulu",
+        "optional": false
+      },
+      {
+        "name": "Ketumbar",
+        "quantity": "1 sdm",
+        "category": "spice",
+        "notes": "Sangrai dan haluskan",
+        "optional": false
+      },
+      {
+        "name": "Jintan",
+        "quantity": "0.5 sdm",
+        "category": "spice",
+        "optional": false
+      },
+      {
+        "name": "Pala",
+        "quantity": "0.25 butir",
+        "category": "spice",
+        "optional": false
+      },
+      {
+        "name": "Garam",
+        "quantity": "2 sdm",
+        "category": "seasoning",
+        "notes": "Sesuai selera",
+        "optional": false
+      },
+      {
+        "name": "Gula merah",
+        "quantity": "1 sdm",
+        "category": "seasoning",
+        "notes": "Sisir halus",
+        "optional": false
+      },
+      {
+        "name": "Nasi putih hangat",
+        "quantity": "4 porsi",
+        "category": "carbs",
+        "optional": false
+      }
+    ],
+    "cookingSteps": [
+      {
+        "step": 1,
+        "title": "Persiapan Bahan",
+        "description": "Siapkan semua bahan. Potong daging sapi sesuai selera, bersihkan daun-daunan, dan haluskan bumbu dengan blender atau ulekan.",
+        "duration": "20 menit",
+        "difficulty": "mudah",
+        "image": "https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=400&h=300&fit=crop",
+        "tips": [
+          "Gunakan daging berkualitas baik agar hasil empuk",
+          "Potong daging melawan serat supaya lunak",
+          "Haluskan bumbu hingga benar-benar lembut"
+        ]
+      },
+      {
+        "step": 2,
+        "title": "Menumis Bumbu",
+        "description": "Panaskan wajan besar, tumis bumbu halus bersama daun salam, daun kunyit, dan serai hingga harum dan matang.",
+        "duration": "15 menit",
+        "difficulty": "sedang",
+        "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&h=300&fit=crop",
+        "tips": [
+          "Gunakan api sedang dan aduk terus",
+          "Pastikan bumbu benar-benar matang agar tidak langu",
+          "Tambahkan sedikit minyak jika terlalu kering"
+        ]
+      },
+      {
+        "step": 3,
+        "title": "Memasak Daging",
+        "description": "Masukkan daging sapi ke dalam tumisan bumbu, aduk hingga semua daging terbalut bumbu. Masak hingga daging berubah warna.",
+        "duration": "10 menit",
+        "difficulty": "sedang",
+        "image": "https://images.unsplash.com/photo-1525755662778-989d0524087e?w=400&h=300&fit=crop",
+        "tips": [
+          "Gunakan api sedang cenderung besar",
+          "Aduk agar bumbu merata",
+          "Pastikan tidak ada cairan berlebih sebelum menambahkan santan"
+        ]
+      },
+      {
+        "step": 4,
+        "title": "Menambahkan Santan",
+        "description": "Tuang santan kental, masak dengan api kecil sambil terus diaduk perlahan agar santan tidak pecah. Masak hingga santan mendidih.",
+        "duration": "15 menit",
+        "difficulty": "sedang",
+        "image": "https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=400&h=300&fit=crop",
+        "tips": [
+          "Aduk perlahan agar santan tidak pecah",
+          "Gunakan spatula kayu saat mengaduk",
+          "Masak dengan api kecil"
+        ]
+      },
+      {
+        "step": 5,
+        "title": "Mengentalkan Bumbu",
+        "description": "Masak rendang dengan api kecil selama 2-3 jam hingga santan menyusut dan bumbu mengental. Aduk sesekali agar tidak gosong.",
+        "duration": "120 menit",
+        "difficulty": "sulit",
+        "image": "https://images.unsplash.com/photo-1525755662778-989d0524087e?w=400&h=300&fit=crop",
+        "tips": [
+          "Gunakan wajan tebal agar panas merata",
+          "Aduk dari bawah ke atas agar tidak gosong",
+          "Jika bumbu terlalu kering, tambahkan sedikit air panas"
+        ]
+      },
+      {
+        "step": 6,
+        "title": "Penyelesaian",
+        "description": "Ketika rendang sudah kering dan berwarna cokelat kehitaman, angkat dari api. Koreksi rasa terakhir kali. Sajikan rendang dengan nasi putih hangat.",
+        "duration": "10 menit",
+        "difficulty": "mudah",
+        "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=300&fit=crop",
+        "tips": [
+          "Rendang yang baik berwarna cokelat kehitaman",
+          "Daging harus empuk dan bumbu meresap sempurna",
+          "Sajikan dalam keadaan hangat untuk cita rasa terbaik"
+        ]
+      }
+    ],
+    "nutrition": {
+      "calories": 420,
+      "protein": 35,
+      "carbs": 8,
+      "fat": 28,
+      "fiber": 3,
+      "sugar": 6,
+      "sodium": 680,
+      "cholesterol": 95,
+      "calcium": 45,
+      "iron": 4.2,
+      "benefits": [
+        "Tinggi protein untuk pembentukan otot",
+        "Mengandung antioksidan dari rempah-rempah",
+        "Sumber zat besi untuk mencegah anemia",
+        "Mengandung kurkumin dari kunyit yang anti-inflamasi"
+      ],
+      "dietary": [
+        "Halal",
+        "Gluten Free",
+        "Keto Friendly"
+      ],
+      "vitamins": [
+        {
+          "name": "Vitamin A",
+          "percentage": 15
+        },
+        {
+          "name": "Vitamin C",
+          "percentage": 25
+        },
+        {
+          "name": "Vitamin E",
+          "percentage": 12
+        },
+        {
+          "name": "Vitamin B6",
+          "percentage": 18
+        }
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "name": "Telur Ceplok Balado Kosan",
+    "shortDescription": "Menu sederhana khas anak kos, cuma butuh telur dan sambal. Hemat, cepat, dan tetap enak.",
+    "image": "https://img-global.cpcdn.com/recipes/6112bf43edcef5ee/200x200cq80/telur-ceplok-balado-foto-resep-utama.jpg",
+    "region": "Indonesia",
+    "difficulty": "Mudah",
+    "cookingTime": "15 menit",
+    "servings": 2,
+    "rating": 4.5,
+    "reviewCount": 87,
+    "estimatedCost": 12000,
+    "isTraditional": false,
+    "isNew": true,
+    "culturalStory": {
+      "shortStory": "Telur balado versi hemat ala anak kos jadi andalan karena murah, cepat, dan tetap bercita rasa Nusantara.",
+      "fullStory": "Hidangan ini lahir dari kreativitas anak kos yang hanya punya telur dan sambal botol atau ulek sederhana. Walau sederhana, telur balado kosan tetap jadi penyelamat di akhir bulan ketika budget menipis.",
+      "culturalElements": [
+        {
+          "title": "Murah Meriah",
+          "description": "Bahan bisa didapat di warung dekat kos dengan harga <15 ribu"
+        },
+        {
+          "title": "Cepat Saji",
+          "description": "Hanya butuh 15 menit untuk siap disantap"
+        },
+        {
+          "title": "Fleksibel",
+          "description": "Bisa pakai sambal botol atau bumbu instan"
+        }
+      ],
+      "regionalVariations": [
+        {
+          "region": "Jawa",
+          "difference": "Rasa cenderung manis pedas dengan tambahan kecap"
+        },
+        {
+          "region": "Sumatera",
+          "difference": "Lebih pedas, sambal pakai banyak cabai rawit"
+        }
+      ]
+    },
+    "budgetData": {
+      "total": 12000,
+      "perServing": 6000,
+      "savings": 20000,
+      "restaurantSavings": 75,
+      "marketplaces": [
+        {
+          "name": "warung dekat kos",
+          "total": 12000,
+          "ingredients": [
+            {
+              "price": 6000
+            },
+            {
+              "price": 4000
+            },
+            {
+              "price": 2000
+            }
+          ]
+        }
+      ],
+      "offlineStores": [
+        {
+          "name": "Warung Bu RT",
+          "address": "Dekat kosan",
+          "openingHours": "07.00 - 22.00",
+          "estimatedDistance": 0.1,
+          "recommendedItems": [
+            "Telur 1/2 kg",
+            "Cabai",
+            "Bawang"
+          ]
+        }
+      ],
+      "ingredients": [
+        {
+          "name": "Telur",
+          "quantity": "4 butir",
+          "price": 6000
+        },
+        {
+          "name": "Cabai merah",
+          "quantity": "5 buah",
+          "price": 3000
         },
         {
           "name": "Bawang merah",
-          "amount": 10,
-          "unit": "siung"
+          "quantity": "3 siung",
+          "price": 2000
+        },
+        {
+          "name": "Garam & Gula",
+          "quantity": "secukupnya",
+          "price": 1000
+        }
+      ]
+    },
+    "ingredients": [
+      {
+        "name": "Telur",
+        "quantity": "4 butir",
+        "category": "protein",
+        "substitutes": [
+          "Tahu goreng"
+        ],
+        "optional": false
+      },
+      {
+        "name": "Cabai merah",
+        "quantity": "5 buah",
+        "category": "spice",
+        "substitutes": [
+          "Sambal botol"
+        ],
+        "optional": false
+      },
+      {
+        "name": "Bawang merah",
+        "quantity": "3 siung",
+        "category": "spice",
+        "substitutes": [
+          "Bawang putih"
+        ],
+        "optional": true
+      },
+      {
+        "name": "Minyak goreng",
+        "quantity": "3 sdm",
+        "category": "oil",
+        "substitutes": [
+          "Margarin"
+        ],
+        "optional": false
+      },
+      {
+        "name": "Garam & gula",
+        "quantity": "secukupnya",
+        "category": "seasoning",
+        "substitutes": [
+          "Kaldu instan"
+        ],
+        "optional": false
+      }
+    ],
+    "cookingSteps": [
+      {
+        "title": "Goreng Telur",
+        "description": "Panaskan minyak, ceplok telur satu per satu hingga matang sesuai selera.",
+        "duration": "5 menit",
+        "difficulty": "mudah",
+        "tips": [
+          "Bisa dibuat setengah matang kalau suka",
+          "Gunakan minyak panas agar telur tidak lengket"
+        ]
+      },
+      {
+        "title": "Buat Sambal",
+        "description": "Haluskan cabai dan bawang (atau gunakan sambal botol). Tumis sebentar dengan minyak.",
+        "duration": "5 menit",
+        "difficulty": "mudah",
+        "tips": [
+          "Kalau malas ulek, pakai sambal instan botol"
+        ]
+      },
+      {
+        "title": "Campur & Sajikan",
+        "description": "Masukkan telur goreng ke dalam sambal. Aduk rata, tambahkan garam/gula sesuai selera. Sajikan dengan nasi hangat.",
+        "duration": "5 menit",
+        "difficulty": "mudah",
+        "tips": [
+          "Tambah kecap untuk rasa manis pedas",
+          "Tambahkan sedikit air biar lebih berkuah"
+        ]
+      }
+    ],
+    "nutrition": {
+      "calories": 280,
+      "protein": 14,
+      "carbs": 5,
+      "fat": 20,
+      "fiber": 2,
+      "sugar": 3,
+      "sodium": 350,
+      "benefits": [
+        "Protein dari telur untuk tenaga belajar",
+        "Cabai membantu meningkatkan metabolisme",
+        "Bahan sederhana tapi tetap bergizi"
+      ],
+      "dietary": [
+        "Halal",
+        "Budget Friendly"
+      ],
+      "vitamins": [
+        {
+          "name": "Vitamin A",
+          "percentage": 10
+        },
+        {
+          "name": "Vitamin C",
+          "percentage": 8
+        },
+        {
+          "name": "Vitamin B12",
+          "percentage": 20
+        }
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "name": "Indomie Telur Kornet Kosan",
+    "shortDescription": "Andalan anak kos: mie instan plus telur dan kornet kaleng. Cepat, hemat, dan bikin kenyang.",
+    "image": "https://img-global.cpcdn.com/recipes/0e02e42e8f7a27c4/200x200cq80/indomie-goreng-kornet-telur-foto-resep-utama.jpg",
+    "region": "Indonesia",
+    "difficulty": "Mudah",
+    "cookingTime": "10 menit",
+    "servings": 1,
+    "rating": 4.7,
+    "reviewCount": 143,
+    "estimatedCost": 10000,
+    "isTraditional": false,
+    "isNew": true,
+    "culturalStory": {
+      "shortStory": "Indomie + telur + kornet jadi paket kombo favorit anak kos di akhir bulan.",
+      "fullStory": "Mie instan adalah penyelamat utama anak kos. Ditambah telur ceplok dan kornet kalengan, rasanya naik kelas walau dengan budget tipis. Resep ini sering jadi makanan sahur, begadang, atau akhir bulan.",
+      "culturalElements": [
+        {
+          "title": "Cepat & Praktis",
+          "description": "Mie instan hanya butuh 3–5 menit masak."
+        },
+        {
+          "title": "Hemat Budget",
+          "description": "Modal kurang dari 10 ribu sudah kenyang."
+        },
+        {
+          "title": "Ikonik Anak Kos",
+          "description": "Mie instan identik dengan kehidupan kos-kosan."
+        }
+      ],
+      "regionalVariations": [
+        {
+          "region": "Jawa",
+          "difference": "Biasanya ditambah kecap manis biar lebih gurih."
+        },
+        {
+          "region": "Sumatera",
+          "difference": "Lebih pedas dengan tambahan cabai rawit iris."
+        }
+      ]
+    },
+    "budgetData": {
+      "total": 10000,
+      "perServing": 10000,
+      "savings": 15000,
+      "restaurantSavings": 60,
+      "marketplaces": [
+        {
+          "name": "warung dekat kos",
+          "total": 10000,
+          "ingredients": [
+            {
+              "price": 4000
+            },
+            {
+              "price": 3000
+            },
+            {
+              "price": 3000
+            }
+          ]
+        }
+      ],
+      "offlineStores": [
+        {
+          "name": "Warung Bu RT",
+          "address": "Dekat kosan",
+          "openingHours": "07.00 - 22.00",
+          "estimatedDistance": 0.1,
+          "recommendedItems": [
+            "Indomie goreng",
+            "Telur",
+            "Kornet kaleng kecil"
+          ]
+        }
+      ],
+      "ingredients": [
+        {
+          "name": "Indomie goreng",
+          "quantity": "1 bungkus",
+          "price": 4000
+        },
+        {
+          "name": "Telur",
+          "quantity": "1 butir",
+          "price": 3000
+        },
+        {
+          "name": "Kornet sapi kaleng kecil",
+          "quantity": "2 sdm",
+          "price": 3000
+        }
+      ]
+    },
+    "ingredients": [
+      {
+        "name": "Indomie goreng",
+        "quantity": "1 bungkus",
+        "category": "carbs",
+        "substitutes": [
+          "Mie instan merk lain"
+        ],
+        "optional": false
+      },
+      {
+        "name": "Telur",
+        "quantity": "1 butir",
+        "category": "protein",
+        "substitutes": [
+          "Tahu goreng"
+        ],
+        "optional": false
+      },
+      {
+        "name": "Kornet sapi",
+        "quantity": "2 sdm",
+        "category": "protein",
+        "substitutes": [
+          "Sosis iris"
+        ],
+        "optional": true
+      },
+      {
+        "name": "Minyak goreng",
+        "quantity": "2 sdm",
+        "category": "oil",
+        "substitutes": [
+          "Margarin"
+        ],
+        "optional": false
+      },
+      {
+        "name": "Cabe rawit (opsional)",
+        "quantity": "3 buah",
+        "category": "spice",
+        "substitutes": [
+          "Sambal botol"
+        ],
+        "optional": true
+      }
+    ],
+    "cookingSteps": [
+      {
+        "title": "Rebus Mie",
+        "description": "Rebus mie instan sampai setengah matang, tiriskan, lalu campur dengan bumbu instan.",
+        "duration": "5 menit",
+        "difficulty": "mudah",
+        "tips": [
+          "Jangan terlalu lama direbus agar mie tidak lembek"
+        ]
+      },
+      {
+        "title": "Masak Telur & Kornet",
+        "description": "Panaskan minyak, goreng telur ceplok. Tumis kornet sebentar agar lebih harum.",
+        "duration": "3 menit",
+        "difficulty": "mudah",
+        "tips": [
+          "Kalau suka, bisa bikin telur setengah matang"
+        ]
+      },
+      {
+        "title": "Campur & Sajikan",
+        "description": "Masukkan mie ke piring, tambahkan telur ceplok dan kornet di atasnya. Taburi cabai rawit iris bila suka pedas.",
+        "duration": "2 menit",
+        "difficulty": "mudah",
+        "tips": [
+          "Tambahkan keju parut biar lebih creamy"
+        ]
+      }
+    ],
+    "nutrition": {
+      "calories": 450,
+      "protein": 18,
+      "carbs": 55,
+      "fat": 20,
+      "fiber": 3,
+      "sugar": 4,
+      "sodium": 800,
+      "benefits": [
+        "Cepat bikin kenyang",
+        "Protein tambahan dari telur & kornet",
+        "Praktis saat akhir bulan"
+      ],
+      "dietary": [
+        "Halal",
+        "Budget Friendly"
+      ],
+      "vitamins": [
+        {
+          "name": "Vitamin A",
+          "percentage": 5
+        },
+        {
+          "name": "Vitamin B12",
+          "percentage": 15
+        },
+        {
+          "name": "Zinc",
+          "percentage": 10
+        }
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "name": "Sayur Sop Sederhana",
+    "shortDescription": "Menu sehat ala anak kos, cukup wortel, kol, kentang, dan bumbu sederhana. Cepat, bergizi, dan hemat.",
+    "image": "https://img-global.cpcdn.com/recipes/4b80b36d2b3b2c64/200x200cq80/sayur-sop-sederhana-foto-resep-utama.jpg",
+    "region": "Indonesia",
+    "difficulty": "Mudah",
+    "cookingTime": "20 menit",
+    "servings": 2,
+    "rating": 4.6,
+    "reviewCount": 65,
+    "estimatedCost": 10000,
+    "isTraditional": true,
+    "isNew": false,
+    "culturalStory": {
+      "shortStory": "Sayur sop sederhana jadi andalan anak kos yang ingin makan sehat dengan modal minim.",
+      "fullStory": "Sayur sop adalah salah satu menu rumahan paling populer di Indonesia. Untuk anak kos, sop sederhana dengan bahan seadanya tetap bisa menghadirkan kehangatan dan gizi, tanpa ribet dan tanpa mahal.",
+      "culturalElements": [
+        {
+          "title": "Murah & Sehat",
+          "description": "Dengan 10 ribu bisa dapat 2–3 porsi sop sayuran."
+        },
+        {
+          "title": "Bahan Fleksibel",
+          "description": "Bisa diganti sesuai sayuran yang ada di kulkas."
+        },
+        {
+          "title": "Mudah Dibuat",
+          "description": "Hanya perlu 1 panci dan 20 menit waktu masak."
+        }
+      ],
+      "regionalVariations": [
+        {
+          "region": "Jawa",
+          "difference": "Biasanya ada tambahan seledri dan bawang goreng."
+        },
+        {
+          "region": "Sumatera",
+          "difference": "Lebih gurih dengan tambahan kaldu ayam atau sapi."
+        }
+      ]
+    },
+    "budgetData": {
+      "total": 10000,
+      "perServing": 5000,
+      "savings": 15000,
+      "restaurantSavings": 70,
+      "marketplaces": [
+        {
+          "name": "warung dekat kos",
+          "total": 10000,
+          "ingredients": [
+            {
+              "price": 3000
+            },
+            {
+              "price": 2000
+            },
+            {
+              "price": 3000
+            },
+            {
+              "price": 2000
+            }
+          ]
+        }
+      ],
+      "offlineStores": [
+        {
+          "name": "Warung Sayur Mbak Ani",
+          "address": "Dekat gang kosan",
+          "openingHours": "06.00 - 20.00",
+          "estimatedDistance": 0.2,
+          "recommendedItems": [
+            "Wortel",
+            "Kol",
+            "Kentang",
+            "Seledri"
+          ]
+        }
+      ],
+      "ingredients": [
+        {
+          "name": "Wortel",
+          "quantity": "1 buah",
+          "price": 3000
+        },
+        {
+          "name": "Kentang",
+          "quantity": "1 buah",
+          "price": 2000
+        },
+        {
+          "name": "Kol",
+          "quantity": "1/4 buah",
+          "price": 3000
+        },
+        {
+          "name": "Bumbu (bawang, garam, merica)",
+          "quantity": "secukupnya",
+          "price": 2000
+        }
+      ]
+    },
+    "ingredients": [
+      {
+        "name": "Wortel",
+        "quantity": "1 buah",
+        "category": "vegetable",
+        "substitutes": [
+          "Buncis"
+        ],
+        "optional": false
+      },
+      {
+        "name": "Kentang",
+        "quantity": "1 buah",
+        "category": "carbs",
+        "substitutes": [
+          "Singkong"
+        ],
+        "optional": false
+      },
+      {
+        "name": "Kol",
+        "quantity": "1/4 buah",
+        "category": "vegetable",
+        "substitutes": [
+          "Sawi putih"
+        ],
+        "optional": false
+      },
+      {
+        "name": "Bawang putih",
+        "quantity": "3 siung",
+        "category": "spice",
+        "substitutes": [
+          "Bawang merah"
+        ],
+        "optional": false
+      },
+      {
+        "name": "Merica bubuk",
+        "quantity": "1/2 sdt",
+        "category": "seasoning",
+        "substitutes": [
+          "Lada hitam"
+        ],
+        "optional": true
+      },
+      {
+        "name": "Garam",
+        "quantity": "1 sdt",
+        "category": "seasoning",
+        "substitutes": [
+          "Kaldu bubuk"
+        ],
+        "optional": false
+      },
+      {
+        "name": "Air",
+        "quantity": "500 ml",
+        "category": "liquid",
+        "optional": false
+      }
+    ],
+    "cookingSteps": [
+      {
+        "title": "Siapkan Bahan",
+        "description": "Cuci bersih semua sayuran, potong wortel, kentang, dan kol sesuai selera.",
+        "duration": "5 menit",
+        "difficulty": "mudah",
+        "tips": [
+          "Potong kecil agar cepat matang"
+        ]
+      },
+      {
+        "title": "Tumis Bumbu",
+        "description": "Tumis bawang putih dengan sedikit minyak hingga harum.",
+        "duration": "3 menit",
+        "difficulty": "mudah",
+        "tips": [
+          "Gunakan api kecil agar tidak gosong"
+        ]
+      },
+      {
+        "title": "Rebus Sop",
+        "description": "Masukkan air ke panci, tambahkan wortel, kentang, lalu kol. Bumbui dengan garam dan merica.",
+        "duration": "10 menit",
+        "difficulty": "mudah",
+        "tips": [
+          "Tambahkan seledri atau bawang goreng untuk aroma lebih enak"
+        ]
+      },
+      {
+        "title": "Sajikan",
+        "description": "Angkat sop setelah semua bahan matang. Sajikan hangat dengan nasi putih.",
+        "duration": "2 menit",
+        "difficulty": "mudah",
+        "tips": [
+          "Cocok disantap dengan kerupuk"
+        ]
+      }
+    ],
+    "nutrition": {
+      "calories": 120,
+      "protein": 3,
+      "carbs": 20,
+      "fat": 2,
+      "fiber": 5,
+      "sugar": 4,
+      "sodium": 250,
+      "benefits": [
+        "Sayuran kaya serat untuk pencernaan",
+        "Rendah kalori cocok untuk diet",
+        "Murah meriah dan mengenyangkan"
+      ],
+      "dietary": [
+        "Halal",
+        "Vegetarian Friendly",
+        "Budget Friendly"
+      ],
+      "vitamins": [
+        {
+          "name": "Vitamin A",
+          "percentage": 40
+        },
+        {
+          "name": "Vitamin C",
+          "percentage": 20
+        },
+        {
+          "name": "Vitamin B6",
+          "percentage": 15
+        }
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "name": "Tumis Kangkung Bawang Putih",
+    "shortDescription": "Menu favorit anak kos: kangkung murah meriah ditumis bawang putih. Cepat, gurih, dan bikin lahap.",
+    "image": "https://img-global.cpcdn.com/recipes/5d5bcb8f7c5a2a71/200x200cq80/tumis-kangkung-bawang-putih-foto-resep-utama.jpg",
+    "region": "Indonesia",
+    "difficulty": "Mudah",
+    "cookingTime": "10 menit",
+    "servings": 2,
+    "rating": 4.8,
+    "reviewCount": 92,
+    "estimatedCost": 8000,
+    "isTraditional": true,
+    "isNew": false,
+    "culturalStory": {
+      "shortStory": "Tumis kangkung bawang putih jadi andalan warteg dan anak kos karena simpel, murah, dan cepat masaknya.",
+      "fullStory": "Kangkung adalah sayuran populer di Indonesia. Dengan bawang putih dan sedikit bumbu, tumisan ini jadi menu bergizi yang hemat. Anak kos sering menjadikannya pilihan sehat saat bosan dengan mie instan.",
+      "culturalElements": [
+        {
+          "title": "Cepat Masak",
+          "description": "Cuma perlu 5–7 menit menumis sudah siap santap."
+        },
+        {
+          "title": "Murah Meriah",
+          "description": "Harga kangkung per ikat hanya 3–5 ribu."
+        },
+        {
+          "title": "Favorit Nusantara",
+          "description": "Hampir setiap warteg selalu ada menu ini."
+        }
+      ],
+      "regionalVariations": [
+        {
+          "region": "Jawa",
+          "difference": "Ditambah sedikit kecap manis untuk rasa gurih manis."
+        },
+        {
+          "region": "Sumatera",
+          "difference": "Lebih pedas karena pakai cabai rawit tumis."
+        }
+      ]
+    },
+    "budgetData": {
+      "total": 8000,
+      "perServing": 4000,
+      "savings": 12000,
+      "restaurantSavings": 65,
+      "marketplaces": [
+        {
+          "name": "warung dekat kos",
+          "total": 8000,
+          "ingredients": [
+            {
+              "price": 4000
+            },
+            {
+              "price": 2000
+            },
+            {
+              "price": 2000
+            }
+          ]
+        }
+      ],
+      "offlineStores": [
+        {
+          "name": "Warung Sayur Pak RT",
+          "address": "Sebelah kos",
+          "openingHours": "07.00 - 20.00",
+          "estimatedDistance": 0.1,
+          "recommendedItems": [
+            "Kangkung segar",
+            "Bawang putih",
+            "Cabai rawit"
+          ]
+        }
+      ],
+      "ingredients": [
+        {
+          "name": "Kangkung",
+          "quantity": "1 ikat",
+          "price": 4000
         },
         {
           "name": "Bawang putih",
-          "amount": 6,
-          "unit": "siung"
+          "quantity": "3 siung",
+          "price": 2000
         },
         {
-          "name": "Lengkuas",
-          "amount": 50,
-          "unit": "gram"
-        },
-        {
-          "name": "Jahe",
-          "amount": 30,
-          "unit": "gram"
-        },
-        {
-          "name": "Kunyit",
-          "amount": 20,
-          "unit": "gram"
-        },
-        {
-          "name": "Kemiri",
-          "amount": 6,
-          "unit": "butir",
-          "notes": "Sangrai terlebih dahulu"
-        },
-        {
-          "name": "Ketumbar",
-          "amount": 1,
-          "unit": "sdm",
-          "notes": "Sangrai dan haluskan"
-        },
-        {
-          "name": "Jintan",
-          "amount": 0.5,
-          "unit": "sdm"
-        },
-        {
-          "name": "Pala",
-          "amount": 0.25,
-          "unit": "butir"
+          "name": "Cabai rawit",
+          "quantity": "3 buah",
+          "price": 2000
         }
       ]
     },
-    {
-      "category": "Pelengkap",
-      "items": [
-        {
-          "name": "Garam",
-          "amount": 2,
-          "unit": "sdm",
-          "notes": "Sesuai selera"
-        },
-        {
-          "name": "Gula merah",
-          "amount": 1,
-          "unit": "sdm",
-          "notes": "Sisir halus"
-        },
-        {
-          "name": "Nasi putih hangat",
-          "amount": 4,
-          "unit": "porsi"
-        }
-      ]
-    }
-  ],
-  "cookingSteps": [
-    {
-      "step": 1,
-      "title": "Persiapan Bahan",
-      "description": "Siapkan semua bahan. Potong daging sapi sesuai selera, bersihkan daun-daunan, dan haluskan bumbu dengan blender atau ulekan.",
-      "duration": "20 menit",
-      "difficulty": "mudah",
-      "image": "https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=400&h=300&fit=crop",
-      "tips": [
-        "Gunakan daging berkualitas baik agar hasil empuk",
-        "Potong daging melawan serat supaya lunak",
-        "Haluskan bumbu hingga benar-benar lembut"
-      ]
-    },
-    {
-      "step": 2,
-      "title": "Menumis Bumbu",
-      "description": "Panaskan wajan besar, tumis bumbu halus bersama daun salam, daun kunyit, dan serai hingga harum dan matang.",
-      "duration": "15 menit",
-      "difficulty": "sedang",
-      "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&h=300&fit=crop",
-      "tips": [
-        "Gunakan api sedang dan aduk terus",
-        "Pastikan bumbu benar-benar matang agar tidak langu",
-        "Tambahkan sedikit minyak jika terlalu kering"
-      ]
-    },
-    {
-      "step": 3,
-      "title": "Memasak Daging",
-      "description": "Masukkan daging sapi ke dalam tumisan bumbu, aduk hingga semua daging terbalut bumbu. Masak hingga daging berubah warna.",
-      "duration": "10 menit",
-      "difficulty": "sedang",
-      "image": "https://images.unsplash.com/photo-1525755662778-989d0524087e?w=400&h=300&fit=crop",
-      "tips": [
-        "Gunakan api sedang cenderung besar",
-        "Aduk agar bumbu merata",
-        "Pastikan tidak ada cairan berlebih sebelum menambahkan santan"
-      ]
-    },
-    {
-      "step": 4,
-      "title": "Menambahkan Santan",
-      "description": "Tuang santan kental, masak dengan api kecil sambil terus diaduk perlahan agar santan tidak pecah. Masak hingga santan mendidih.",
-      "duration": "15 menit",
-      "difficulty": "sedang",
-      "image": "https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=400&h=300&fit=crop",
-      "tips": [
-        "Aduk perlahan agar santan tidak pecah",
-        "Gunakan spatula kayu saat mengaduk",
-        "Masak dengan api kecil"
-      ]
-    },
-    {
-      "step": 5,
-      "title": "Mengentalkan Bumbu",
-      "description": "Masak rendang dengan api kecil selama 2-3 jam hingga santan menyusut dan bumbu mengental. Aduk sesekali agar tidak gosong.",
-      "duration": "120 menit",
-      "difficulty": "sulit",
-      "image": "https://images.unsplash.com/photo-1525755662778-989d0524087e?w=400&h=300&fit=crop",
-      "tips": [
-        "Gunakan wajan tebal agar panas merata",
-        "Aduk dari bawah ke atas agar tidak gosong",
-        "Jika bumbu terlalu kering, tambahkan sedikit air panas"
-      ]
-    },
-    {
-      "step": 6,
-      "title": "Penyelesaian",
-      "description": "Ketika rendang sudah kering dan berwarna cokelat kehitaman, angkat dari api. Koreksi rasa terakhir kali. Sajikan rendang dengan nasi putih hangat.",
-      "duration": "10 menit",
-      "difficulty": "mudah",
-      "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=300&fit=crop",
-      "tips": [
-        "Rendang yang baik berwarna cokelat kehitaman",
-        "Daging harus empuk dan bumbu meresap sempurna",
-        "Sajikan dalam keadaan hangat untuk cita rasa terbaik"
-      ]
-    }
-  ],
-  "nutrition": {
-    "calories": 420,
-    "protein": 35,
-    "carbs": 8,
-    "fat": 28,
-    "fiber": 3,
-    "sugar": 6,
-    "sodium": 680,
-    "cholesterol": 95,
-    "calcium": 45,
-    "iron": 4.2,
-    "benefits": [
-      "Tinggi protein untuk pembentukan otot",
-      "Mengandung antioksidan dari rempah-rempah",
-      "Sumber zat besi untuk mencegah anemia",
-      "Mengandung kurkumin dari kunyit yang anti-inflamasi"
-    ],
-    "dietary": [
-      "Halal",
-      "Gluten Free",
-      "Keto Friendly"
-    ],
-    "vitamins": [
+    "ingredients": [
       {
-        "name": "Vitamin A",
-        "percentage": 15
+        "name": "Kangkung",
+        "quantity": "1 ikat",
+        "category": "vegetable",
+        "substitutes": [
+          "Bayam"
+        ],
+        "optional": false
       },
       {
-        "name": "Vitamin C",
-        "percentage": 25
+        "name": "Bawang putih",
+        "quantity": "3 siung",
+        "category": "spice",
+        "substitutes": [
+          "Bawang merah"
+        ],
+        "optional": false
       },
       {
-        "name": "Vitamin E",
-        "percentage": 12
+        "name": "Cabai rawit",
+        "quantity": "3 buah",
+        "category": "spice",
+        "substitutes": [
+          "Sambal botol"
+        ],
+        "optional": true
       },
       {
-        "name": "Vitamin B6",
-        "percentage": 18
+        "name": "Minyak goreng",
+        "quantity": "2 sdm",
+        "category": "oil",
+        "substitutes": [
+          "Margarin"
+        ],
+        "optional": false
+      },
+      {
+        "name": "Garam",
+        "quantity": "1 sdt",
+        "category": "seasoning",
+        "substitutes": [
+          "Kaldu bubuk"
+        ],
+        "optional": false
       }
-    ]
+    ],
+    "cookingSteps": [
+      {
+        "title": "Siapkan Bahan",
+        "description": "Cuci bersih kangkung, potong sesuai selera. Iris bawang putih dan cabai.",
+        "duration": "3 menit",
+        "difficulty": "mudah",
+        "tips": [
+          "Gunakan kangkung segar agar tidak layu saat ditumis"
+        ]
+      },
+      {
+        "title": "Tumis Bumbu",
+        "description": "Panaskan minyak, tumis bawang putih dan cabai sampai harum.",
+        "duration": "2 menit",
+        "difficulty": "mudah",
+        "tips": [
+          "Gunakan api sedang agar bawang tidak gosong"
+        ]
+      },
+      {
+        "title": "Masak Kangkung",
+        "description": "Masukkan kangkung, aduk cepat, tambahkan garam. Tumis sebentar hingga layu.",
+        "duration": "3 menit",
+        "difficulty": "mudah",
+        "tips": [
+          "Jangan dimasak terlalu lama agar tetap hijau segar"
+        ]
+      },
+      {
+        "title": "Sajikan",
+        "description": "Angkat dan sajikan tumis kangkung bawang putih dengan nasi hangat.",
+        "duration": "2 menit",
+        "difficulty": "mudah",
+        "tips": [
+          "Cocok dipadukan dengan tempe goreng"
+        ]
+      }
+    ],
+    "nutrition": {
+      "calories": 90,
+      "protein": 4,
+      "carbs": 8,
+      "fat": 5,
+      "fiber": 3,
+      "sugar": 2,
+      "sodium": 200,
+      "benefits": [
+        "Sayur hijau kaya zat besi dan serat",
+        "Rendah kalori cocok untuk diet",
+        "Meningkatkan nafsu makan dengan aroma bawang putih"
+      ],
+      "dietary": [
+        "Halal",
+        "Vegetarian Friendly",
+        "Budget Friendly"
+      ],
+      "vitamins": [
+        {
+          "name": "Vitamin A",
+          "percentage": 30
+        },
+        {
+          "name": "Vitamin C",
+          "percentage": 25
+        },
+        {
+          "name": "Vitamin K",
+          "percentage": 40
+        }
+      ]
+    }
   }
-}
+]
