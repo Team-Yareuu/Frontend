@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
 import Input from '../../../components/ui/Input';
@@ -7,7 +7,9 @@ const SearchInterface = ({ onSearch, isLoading }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [isVoiceActive, setIsVoiceActive] = useState(false);
   const [isImageSearch, setIsImageSearch] = useState(false);
+  const [isInputFocused, setIsInputFocused] = useState(false);
   const fileInputRef = useRef(null);
+  const blurTimeoutRef = useRef(null);
 
   const searchSuggestions = [
     "Rendang dengan bumbu tradisional",
@@ -26,6 +28,36 @@ const SearchInterface = ({ onSearch, isLoading }) => {
     { label: "Sehat", icon: "Heart", value: "healthy" },
     { label: "Pedas", icon: "Flame", value: "spicy" }
   ];
+
+  const normalizedQuery = searchQuery?.trim()?.toLowerCase();
+  const filteredSuggestions = normalizedQuery
+    ? searchSuggestions.filter((suggestion) =>
+        suggestion.toLowerCase().includes(normalizedQuery)
+      )
+    : [];
+
+  const shouldShowSuggestions = isInputFocused && normalizedQuery;
+
+  const handleInputFocus = () => {
+    if (blurTimeoutRef.current) {
+      clearTimeout(blurTimeoutRef.current);
+    }
+    setIsInputFocused(true);
+  };
+
+  const handleInputBlur = () => {
+    blurTimeoutRef.current = setTimeout(() => {
+      setIsInputFocused(false);
+    }, 100);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (blurTimeoutRef.current) {
+        clearTimeout(blurTimeoutRef.current);
+      }
+    };
+  }, []);
 
   const handleSearch = (query = searchQuery) => {
     if (query?.trim()) {
@@ -61,6 +93,10 @@ const SearchInterface = ({ onSearch, isLoading }) => {
   const handleSuggestionClick = (suggestion) => {
     setSearchQuery(suggestion);
     handleSearch(suggestion);
+    if (blurTimeoutRef.current) {
+      clearTimeout(blurTimeoutRef.current);
+    }
+    setIsInputFocused(false);
   };
 
   const handleQuickFilter = (filterValue) => {
@@ -88,6 +124,8 @@ const SearchInterface = ({ onSearch, isLoading }) => {
             placeholder="Cari resep, bahan, atau ceritakan keinginan Anda..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e?.target?.value)}
+            onFocus={handleInputFocus}
+            onBlur={handleInputBlur}
             onKeyPress={(e) => e?.key === 'Enter' && handleSearch()}
             className="pr-32 text-base"
             disabled={isLoading || isVoiceActive || isImageSearch}
@@ -128,6 +166,34 @@ const SearchInterface = ({ onSearch, isLoading }) => {
               className="touch-target"
             />
           </div>
+          {shouldShowSuggestions && (
+            <div className="absolute left-0 right-0 top-full mt-2 z-20">
+              <div className="max-h-64 overflow-auto rounded-lg border border-border bg-card shadow-lg">
+                {filteredSuggestions.length > 0 ? (
+                  filteredSuggestions.map((suggestion, index) => (
+                    <button
+                      key={index}
+                      type="button"
+                      onMouseDown={(event) => event.preventDefault()}
+                      onClick={() => handleSuggestionClick(suggestion)}
+                      className="flex w-full items-center gap-3 px-4 py-2 text-left text-sm text-foreground transition-colors duration-150 hover:bg-muted"
+                    >
+                      <Icon
+                        name="Search"
+                        size={16}
+                        className="text-muted-foreground"
+                      />
+                      <span>{suggestion}</span>
+                    </button>
+                  ))
+                ) : (
+                  <p className="px-4 py-3 text-sm text-muted-foreground">
+                    Tidak ada saran yang cocok.
+                  </p>
+                )}
+              </div>
+            </div>
+          )}
         </div>
         
         {/* Hidden File Input */}
@@ -175,24 +241,6 @@ const SearchInterface = ({ onSearch, isLoading }) => {
           ))}
         </div>
       </div>
-      {/* Search Suggestions */}
-      {!searchQuery && (
-        <div>
-          <h3 className="text-sm font-medium text-muted-foreground mb-3">Saran Pencarian</h3>
-          <div className="space-y-2">
-            {searchSuggestions?.map((suggestion, index) => (
-              <button
-                key={index}
-                onClick={() => handleSuggestionClick(suggestion)}
-                className="flex items-center space-x-3 w-full p-3 text-left bg-muted/50 hover:bg-muted rounded-lg transition-colors duration-200 group"
-              >
-                <Icon name="Search" size={16} className="text-muted-foreground group-hover:text-primary" />
-                <span className="text-sm text-foreground group-hover:text-primary">{suggestion}</span>
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
       {/* AI Tips */}
       <div className="mt-6 p-4 bg-gradient-to-r from-primary/5 to-accent/5 rounded-lg border border-primary/10">
         <div className="flex items-start space-x-3">
