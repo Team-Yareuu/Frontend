@@ -6,7 +6,7 @@
     "image": "https://api.meatguy.id/admin/image/blogs/6cfa140f-ccbc-4580-a4a0-9261b7af9aa9",
     "region": "Sumatera Barat",
     "difficulty": "Sedang",
-    "cookingTime": "3 jam",
+    "cookingTimeMinutes": 180,
     "servings": 4,
     "rating": 4.8,
     "reviewCount": 234,

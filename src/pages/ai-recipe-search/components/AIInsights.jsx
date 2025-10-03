@@ -82,22 +82,6 @@ const AIInsights = ({ searchQuery, results }) => {
     };
   };
 
-  const computeConfidence = (baseConfidence = DEFAULT_INSIGHT_TEMPLATE?.searchAnalysis?.confidence || 85, recipes = []) => {
-    if (!recipes?.length) {
-      return Math.max(50, baseConfidence - 10);
-    }
-
-    const culturalDiversity = new Set(
-      recipes?.map((recipe) => recipe?.cultural)?.filter(Boolean)
-    )?.size;
-
-    const diversityBonus = Math.min(6, culturalDiversity * 2);
-    const volumeBonus = Math.min(6, recipes.length);
-
-    return Math.min(100, baseConfidence + diversityBonus + volumeBonus);
-  };
-
-
 
   const buildSuggestions = (templateSuggestions = []) => {
     const suggestions = [...templateSuggestions];
@@ -126,7 +110,7 @@ const AIInsights = ({ searchQuery, results }) => {
       const resolvedInsights = {
         searchAnalysis: {
           intent: template?.searchAnalysis?.intent || getSearchIntent(searchQuery),
-          confidence: computeConfidence(template?.searchAnalysis?.confidence, results),
+         
           suggestions: buildSuggestions(template?.searchAnalysis?.suggestions)
         },
         nutritionalTrends: {
@@ -206,10 +190,6 @@ const AIInsights = ({ searchQuery, results }) => {
         <div className="flex items-center space-x-3">
           <Icon name="Brain" size={24} className="text-primary" />
           <h3 className="text-lg font-semibold text-foreground">AI Insights</h3>
-        </div>
-        <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-          <Icon name="Zap" size={16} className="text-accent" />
-          <span>Confidence: {insights?.searchAnalysis?.confidence}%</span>
         </div>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
