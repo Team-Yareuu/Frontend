@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
 import Header from '../../components/ui/Header';
 import RecipeHeader from './components/RecipeHeader';
@@ -7,14 +7,12 @@ import BudgetBreakdown from './components/BudgetBreakdown';
 import IngredientsList from './components/IngredientsList';
 import CookingSteps from './components/CookingSteps';
 import NutritionInfo from './components/NutritionInfo';
-import UserReviews from './components/UserReviews';
 import AIAssistant from './components/AIAssistant';
 import RelatedRecipes from './components/RelatedRecipes';
 import Icon from '../../components/AppIcon';
 import Button from '../../components/ui/Button';
 
 import mockRecipeData from '../../data/mockRecipe.json';
-import mockReviewsData from '../../data/mockReviews.json';
 import mockRelatedRecipesData from '../../data/mockRelatedRecipes.json';
 
 const RecipeDetail = () => {
@@ -48,7 +46,7 @@ const RecipeDetail = () => {
       setRecipe(foundRecipe);
       setServings(foundRecipe?.servings ?? 4);
     } else {
-      // fallback kalau id ga ketemu → ambil resep pertama
+      // fallback kalau id ga ketemu -> ambil resep pertama
       setRecipe(mockRecipeData[0]);
       setServings(mockRecipeData[0]?.servings ?? 4);
     }
@@ -131,8 +129,7 @@ const RecipeDetail = () => {
                 <div className="flex border-b border-border">
                   {[
                     { id: 'ingredients', label: 'Bahan-Bahan', icon: 'List' },
-                    { id: 'steps', label: 'Langkah Memasak', icon: 'ChefHat' },
-                    { id: 'nutrition', label: 'Informasi Gizi', icon: 'Activity' }
+                    { id: 'steps', label: 'Langkah Memasak', icon: 'ChefHat' }
                   ]?.map((tab) => (
                     <button
                       key={tab?.id}
@@ -153,6 +150,7 @@ const RecipeDetail = () => {
                     <IngredientsList
                       ingredients={recipe?.ingredients}
                       servings={servings}
+                      baseServings={recipe?.servings ?? 4}
                       onServingsChange={handleServingsChange}
                       onSubstitute={handleSubstitute}
                     />
@@ -165,20 +163,15 @@ const RecipeDetail = () => {
                     />
                   )}
 
-                  {activeTab === 'nutrition' && (
+                  {/* {activeTab === 'nutrition' && (
                     <NutritionInfo
                       nutrition={recipe?.nutrition}
                       servings={servings}
                     />
-                  )}
+                  )} */}
                 </div>
               </div>
 
-              {/* User Reviews */}
-              <UserReviews
-                reviews={mockReviewsData}
-                onAddReview={handleAddReview}
-              />
             </div>
 
             {/* Right Column - Sidebar */}
@@ -222,3 +215,5 @@ const RecipeDetail = () => {
 };
 
 export default RecipeDetail;
+
+

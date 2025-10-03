@@ -1,3 +1,3 @@
-waktu masak
+ "cookingTimeMinutes"
 rating
 element budaya
