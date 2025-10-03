@@ -7,7 +7,7 @@ const INSIGHT_TEMPLATES = Array.isArray(insightsDataset) ? insightsDataset : [];
 const DEFAULT_INSIGHT_TEMPLATE =
   INSIGHT_TEMPLATES.find((item) => item?.id === 'vegetarian') || INSIGHT_TEMPLATES[0] || {};
 
-const AIInsights = ({ searchQuery, results, filters }) => {
+const AIInsights = ({ searchQuery, results }) => {
   const [insights, setInsights] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -97,44 +97,24 @@ const AIInsights = ({ searchQuery, results, filters }) => {
     return Math.min(100, baseConfidence + diversityBonus + volumeBonus);
   };
 
-  const countAppliedFilters = (appliedFilters) => {
-    if (!appliedFilters) {
-      return 0;
-    }
 
-    return Object.values(appliedFilters)?.reduce((acc, value) => {
-      if (!value) {
-        return acc;
-      }
-
-      if (Array.isArray(value)) {
-        return acc + value.length;
-      }
-
-      if (typeof value === 'object') {
-        return (
-          acc +
-          Object.values(value)?.reduce((count, item) => (item ? count + 1 : count), 0)
-        );
-      }
-
-      return acc + 1;
-    }, 0);
-  };
 
   const buildSuggestions = (templateSuggestions = []) => {
     const suggestions = [...templateSuggestions];
-    const filterCount = countAppliedFilters(filters);
 
-    if (filterCount > 0) {
-      suggestions.push(
-        `Filter aktif (${filterCount}) bisa disesuaikan untuk hasil yang lebih presisi`
-      );
-    } else if (results?.length > 3) {
-      suggestions.push('Gunakan filter tingkat kesulitan untuk mempersempit rekomendasi');
+    if (!suggestions?.length) {
+      suggestions.push('Sertakan detail bahan, rasa, atau gaya memasak untuk memandu AI');
     }
 
-    return suggestions?.slice(0, 3);
+    if (results?.length > 3) {
+      suggestions.push('Tambahkan info budget, porsi, atau waktu agar hasil makin relevan');
+    } else {
+      suggestions.push('Coba variasikan kata kunci bahan utama atau daerah asal resep');
+    }
+
+    return suggestions
+      ?.filter(Boolean)
+      ?.slice(0, 3);
   };
 
   const generateInsights = () => {
@@ -186,7 +166,7 @@ const AIInsights = ({ searchQuery, results, filters }) => {
     setIsLoading(false);
 
     return undefined;
-  }, [searchQuery, results, filters]);
+  }, [searchQuery, results]);
 
   const formatCurrency = (amount) => {
     return new Intl.NumberFormat('id-ID', {
@@ -202,7 +182,7 @@ const AIInsights = ({ searchQuery, results, filters }) => {
 
   if (isLoading) {
     return (
-      <div className="bg-gradient-to-r from-primary/5 to-accent/5 rounded-xl p-6 border border-primary/10">
+      <div className="bg-gradient-to-r from-primary/5 to-accent/5 rounded-xl px-6 pb-6 border border-primary/10">
         <div className="flex items-center space-x-3 mb-4">
           <Icon name="Brain" size={24} className="text-primary" />
           <h3 className="text-lg font-semibold text-foreground">AI Insights</h3>
@@ -364,15 +344,6 @@ const AIInsights = ({ searchQuery, results, filters }) => {
       </div>
       {/* Action Buttons */}
       <div className="mt-6 flex flex-wrap gap-3">
-        <Button
-          variant="outline"
-          size="sm"
-          iconName="RefreshCw"
-          iconPosition="left"
-          onClick={generateInsights}
-        >
-          Refresh Insights
-        </Button>
         <Button
           variant="ghost"
           size="sm"

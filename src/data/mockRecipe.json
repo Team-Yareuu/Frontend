@@ -1252,5 +1252,228 @@
         }
       ]
     }
+  },
+  {
+    "id": 6,
+    "name": "Tahu Tempe Cabai Garam",
+    "shortDescription": "Menu kosan hemat tapi nikmat: tahu dan tempe digoreng garing lalu ditumis dengan cabai dan bawang. Gurih, pedas, dan bikin nagih.",
+    "image": "https://img-global.cpcdn.com/recipes/ba2f9f0674c5b2ac/200x200cq80/tahu-tempe-cabai-garam-foto-resep-utama.jpg",
+    "region": "Indonesia",
+    "difficulty": "Mudah",
+    "cookingTime": "15 menit",
+    "servings": 2,
+    "rating": 4.7,
+    "reviewCount": 110,
+    "estimatedCost": 9000,
+    "isTraditional": true,
+    "isNew": false,
+    "culturalStory": {
+      "shortStory": "Tahu tempe cabai garam adalah variasi masakan sederhana anak kos yang bikin lauk murah jadi terasa istimewa.",
+      "fullStory": "Tahu dan tempe adalah bahan pokok anak kos yang murah, bergizi, dan fleksibel. Dengan tambahan cabai, bawang, dan garam, jadilah menu sederhana tapi menggugah selera. Biasanya disantap dengan nasi panas dan sambal terasi.",
+      "culturalElements": [
+        {
+          "title": "Murah Meriah",
+          "description": "Dengan 10 ribu rupiah bisa kenyang berdua."
+        },
+        {
+          "title": "Cepat Saji",
+          "description": "Hanya butuh 15 menit dari goreng sampai siap makan."
+        },
+        {
+          "title": "Sumber Protein",
+          "description": "Tahu dan tempe kaya protein nabati yang menyehatkan."
+        }
+      ],
+      "regionalVariations": [
+        {
+          "region": "Jawa",
+          "difference": "Ditambah kecap manis sedikit agar lebih gurih manis."
+        },
+        {
+          "region": "Sumatera",
+          "difference": "Lebih pedas, cabai rawit lebih banyak dipakai."
+        }
+      ]
+    },
+    "budgetData": {
+      "total": 9000,
+      "perServing": 4500,
+      "savings": 12000,
+      "restaurantSavings": 70,
+      "marketplaces": [
+        {
+          "name": "warung dekat kos",
+          "total": 9000,
+          "ingredients": [
+            {
+              "price": 3000
+            },
+            {
+              "price": 3000
+            },
+            {
+              "price": 3000
+            }
+          ]
+        }
+      ],
+      "offlineStores": [
+        {
+          "name": "Warung Bu Tini",
+          "address": "Dekat gang kos",
+          "openingHours": "07.00 - 21.00",
+          "estimatedDistance": 0.15,
+          "recommendedItems": [
+            "Tahu putih",
+            "Tempe",
+            "Cabai rawit"
+          ]
+        }
+      ],
+      "ingredients": [
+        {
+          "name": "Tahu putih",
+          "quantity": "4 potong",
+          "price": 3000
+        },
+        {
+          "name": "Tempe",
+          "quantity": "1/2 papan",
+          "price": 3000
+        },
+        {
+          "name": "Cabai rawit & bawang putih",
+          "quantity": "secukupnya",
+          "price": 3000
+        }
+      ]
+    },
+    "ingredients": [
+      {
+        "name": "Tahu putih",
+        "quantity": "4 potong",
+        "category": "protein",
+        "substitutes": [
+          "Tahu isi"
+        ],
+        "optional": false
+      },
+      {
+        "name": "Tempe",
+        "quantity": "1/2 papan",
+        "category": "protein",
+        "substitutes": [
+          "Tempe mendoan"
+        ],
+        "optional": false
+      },
+      {
+        "name": "Cabai rawit",
+        "quantity": "6 buah",
+        "category": "spice",
+        "substitutes": [
+          "Sambal botol"
+        ],
+        "optional": false
+      },
+      {
+        "name": "Bawang putih",
+        "quantity": "3 siung",
+        "category": "spice",
+        "substitutes": [
+          "Bawang merah"
+        ],
+        "optional": false
+      },
+      {
+        "name": "Garam",
+        "quantity": "1 sdt",
+        "category": "seasoning",
+        "substitutes": [
+          "Kaldu bubuk"
+        ],
+        "optional": false
+      },
+      {
+        "name": "Minyak goreng",
+        "quantity": "3 sdm",
+        "category": "oil",
+        "substitutes": [
+          "Margarin"
+        ],
+        "optional": false
+      }
+    ],
+    "cookingSteps": [
+      {
+        "title": "Goreng Tahu & Tempe",
+        "description": "Potong tahu dan tempe, lalu goreng hingga kecokelatan.",
+        "duration": "7 menit",
+        "difficulty": "mudah",
+        "tips": [
+          "Goreng dengan api sedang agar tidak gosong"
+        ]
+      },
+      {
+        "title": "Tumis Bumbu",
+        "description": "Iris tipis bawang putih dan cabai, lalu tumis sebentar sampai harum.",
+        "duration": "3 menit",
+        "difficulty": "mudah",
+        "tips": [
+          "Bisa tambahkan daun jeruk untuk aroma segar"
+        ]
+      },
+      {
+        "title": "Campur & Aduk",
+        "description": "Masukkan tahu dan tempe goreng ke dalam tumisan. Taburi garam, aduk cepat hingga rata.",
+        "duration": "3 menit",
+        "difficulty": "mudah",
+        "tips": [
+          "Aduk cepat agar tahu tempe tidak hancur"
+        ]
+      },
+      {
+        "title": "Sajikan",
+        "description": "Angkat dan sajikan tahu tempe cabai garam dengan nasi hangat.",
+        "duration": "2 menit",
+        "difficulty": "mudah",
+        "tips": [
+          "Paling enak dimakan dengan sambal terasi"
+        ]
+      }
+    ],
+    "nutrition": {
+      "calories": 220,
+      "protein": 12,
+      "carbs": 8,
+      "fat": 15,
+      "fiber": 3,
+      "sugar": 2,
+      "sodium": 300,
+      "benefits": [
+        "Sumber protein nabati murah",
+        "Pedas gurih bikin lahap makan",
+        "Cocok untuk menu harian anak kos"
+      ],
+      "dietary": [
+        "Halal",
+        "Vegetarian Friendly",
+        "Budget Friendly"
+      ],
+      "vitamins": [
+        {
+          "name": "Vitamin B1",
+          "percentage": 15
+        },
+        {
+          "name": "Vitamin B6",
+          "percentage": 12
+        },
+        {
+          "name": "Vitamin C",
+          "percentage": 10
+        }
+      ]
+    }
   }
 ]
